@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.ad-container {
+    position: sticky;
+    top: 100px;
+    width: 220px;
+    background-color: hsl(240, 8%, 25%);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(3, 3, 3, 0.15);
+    padding: 15px;
+    z-index: 1000;
+    color: #f8f9fa;
+}
+
+.ad-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ad-img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.content-area {
+    max-width: 100%;
+}
+
+.carousel-container {
+   
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.rounded-carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark background with higher opacity */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.carousel-caption h5 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 1; /* Increase text opacity */
+}
+
+.carousel-caption p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    opacity: 1; /* Increase text opacity */
+}
+
+
+/* Ensure dropdown appears above other containers */
+.dropdown-menu {
+    position: absolute;
+    z-index: 1050; /* Higher than other elements */
+    min-width: 180px;
+    background-color: white; /* Optional: Background color for visibility */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Optional: Adds shadow for visibility */
+}
+
+nav .dropdown > a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Additional dropdown styling */
+.dropdown-menu {
+    position: absolute;
+    z-index: 1050; /* Ensures it stays above other elements */
+    min-width: 180px;
+    background-color: white; /* Background color for visibility */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+/* Container to hold the carousel items */
+.carousel-container {
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
