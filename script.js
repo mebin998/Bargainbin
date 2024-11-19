@@ -16,12 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const seeMoreBtn = document.getElementById("see-more");
     const cartCountElement = document.getElementById("cart-count"); // Get cart count display
     let cartCount = 0;
+    
 
     // Event listener for the "Add to Cart" buttons
     document.querySelectorAll(".add-to-cart").forEach(button => {
         button.addEventListener("click", () => {
             cartCount += 1; // Increment cart count
             cartCountElement.textContent = `(${cartCount})`; // Update cart count in header
+            alert(cartCount + " items successfully added to your cart!");
         });
     });
 
