@@ -18,19 +18,37 @@
         }
 
         .signin-container {
-            width: 100%;
-            max-width: 400px;
+            display: flex;
+            width: 800px;
+            max-width: 800px;
             background-color: #fff;
-            padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .signin-left {
+            flex: 1;
+            background: url('./BargainBin.png') no-repeat center center;
+            background-size: cover;
+            min-height: 300px;
+        }
+
+        .signin-right {
+            flex: 1;
+            padding: 40px;
         }
 
         .signin-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             margin-bottom: 20px;
             text-align: center;
+        }
+
+        .form-control {
+            border-radius: 25px;
+            padding: 10px 15px;
         }
 
         .btn-signin {
@@ -38,6 +56,8 @@
             background-color: #007bff;
             color: #fff;
             font-weight: bold;
+            border-radius: 25px;
+            padding: 10px 20px;
         }
 
         .forgot-password {
@@ -54,42 +74,71 @@
             margin-top: 20px;
             display: block;
         }
+
+        @media (max-width: 700px) {
+            .signin-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .signin-left {
+                display: none;
+            }
+
+            .signin-right {
+                width: 40%;
+                align-self: center;
+                margin-bottom: 0px;
+                margin-top: 100px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .signin-title {
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="signin-container">
+        <!-- Left Section with Round Profile Picture -->
+        <div class="signin-left"></div>
 
-<div class="signin-container">
-    <h2 class="signin-title">Sign In to BargainBin</h2>
-    <form id="signInForm">
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        <!-- Right Section with Sign In Form -->
+        <div class="signin-right">
+            <h2 class="signin-title">Sign In to BargainBin</h2>
+            <form id="signInForm">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="button" class="btn btn-primary btn-signin" onclick="signIn()">Sign In</button>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
-        </div>
-        <button type="button" class="btn btn-primary btn-signin" onclick="signIn()">Sign In</button>
-        <a href="#" class="forgot-password">Forgot Password?</a>
-    </form>
-    <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
-</div>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-<script>
-    function signIn() {
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function signIn() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
 
-        if (email && password) {
-            alert(`Signed in as: ${email}`);
-            // Add additional actions here, like redirecting to the homepage
-        } else {
-            alert("Please enter both email and password.");
+            if (email && password) {
+                alert(`Signed in as: ${email}`);
+                window.location.href = "./Bargainbin.html"; // Redirect to homepage
+            } else {
+                alert("Please enter both email and password.");
+            }
         }
-    }
-</script>
-
+    </script>
 </body>
 </html>
