@@ -15,9 +15,11 @@
 
 <!-- Header Section with Sub-Menus -->
 <header class="bg-dark text-white p-3 d-flex flex-wrap justify-content-between align-items-center">
+    <div class="container-fluid">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
     <div class="d-flex align-items-center">
-        <img src="./loooogo.png" alt="BargainBin Logo" class="logo-img mr-2">
-        <div class="logo">BargainBin</div>
+        <a href="./Bargainbin.html"><img src="./loooogo.png" alt="BargainBin Logo" class="logo-img mr-2"></a>
+        <a href="./Bargainbin.html" style="text-decoration: none; color: aliceblue; font-family: 'Arial', sans-serif;"><div class="logo" >BargainBin</div></a>
     </div>
     <div class="input-group mx-2 my-2" style="max-width: 400px;">
         <input type="text" id="searchBar" class="form-control" placeholder="Search products...">
@@ -75,12 +77,13 @@
     </nav>
 
     <div class="d-flex align-items-center">
-        <a href="./signin.html" class="text-white mx-2"><i class="fas fa-user"></i> Sign In</a>
-        <a href="#" class="text-white mx-2"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span></a>
+        <a href="./signin.html" class="text-white mx-2" id="signin"><i class="fas fa-user"></i> Sign In</a>
+        <a href="./cart.html" class="text-white mx-2"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span></a>
     </div>
-    
+</div>
+</div>
 </header>
-
+<!-- Main Layout -->
     <div class="main-layout">
         <!-- Sidebar Ad Container -->
         <div class="ad-container">
@@ -97,7 +100,7 @@
         </div>
 
         <!-- Main Content Area -->
-        <div class="content-area">
+        <div class="col-lg-12 col-md-15 col-12 content-area">
             <!-- Featured Carousel -->
             <div id="carouselExampleControls" class="carousel slide carousel-container mt-3" data-ride="carousel">
                 <div class="carousel-inner">
@@ -135,9 +138,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Product Name</h5>
                                 <p class="card-text">$10</p>
-                                <button class="btn btn-primary buy-now">Buy Now</button>
-                                <button class="btn btn-secondary add-to-cart">Add to Cart</button>
-                                <button class="btn btn-light share">Share</button>
+                                <a class="btn btn-primary btn-block buy-now" href="./checkout.html">Buy Now</a>
+                                <button class="btn btn-secondary btn-block add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-block share ">Share</button>
                             </div>
                         </div>
                     </div>
@@ -147,9 +150,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Product Name</h5>
                                 <p class="card-text">$10</p>
-                                <button class="btn btn-primary buy-now">Buy Now</button>
-                                <button class="btn btn-secondary add-to-cart">Add to Cart</button>
-                                <button class="btn btn-light share">Share</button>
+                                <a class="btn btn-primary btn-block buy-now" href="./checkout.html">Buy Now</a>
+                                <button class="btn btn-secondary btn-block add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-block share">Share</button>
                             </div>
                         </div>
                     </div>
@@ -159,9 +162,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Product Name</h5>
                                 <p class="card-text">$10</p>
-                                <button class="btn btn-primary buy-now">Buy Now</button>
-                                <button class="btn btn-secondary add-to-cart">Add to Cart</button>
-                                <button class="btn btn-light share">Share</button>
+                                <a class="btn btn-primary btn-block buy-now" href="./checkout.html">Buy Now</a>
+                                <button class="btn btn-secondary btn-block add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-block share">Share</button>
                             </div>
                         </div>
                     </div>
@@ -171,9 +174,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Product Name</h5>
                                 <p class="card-text">$10</p>
-                                <button class="btn btn-primary buy-now">Buy Now</button>
-                                <button class="btn btn-secondary add-to-cart">Add to Cart</button>
-                                <button class="btn btn-light share">Share</button>
+                                <a class="btn btn-primary btn-block buy-now" href="./checkout.html">Buy Now</a>
+                                <button class="btn btn-secondary btn-block add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-block share">Share</button>
                             </div>
                         </div>
                     </div>
@@ -183,9 +186,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Product Name</h5>
                                 <p class="card-text">$10</p>
-                                <button class="btn btn-primary buy-now">Buy Now</button>
-                                <button class="btn btn-secondary add-to-cart">Add to Cart</button>
-                                <button class="btn btn-light share">Share</button>
+                                <a class="btn btn-primary btn-block buy-now" href="./checkout.html">Buy Now</a>
+                                <button class="btn btn-secondary btn-block add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-block share">Share</button>
                             </div>
                         </div>
                     </div>
@@ -195,9 +198,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Product Name</h5>
                                 <p class="card-text">$10</p>
-                                <button class="btn btn-primary buy-now">Buy Now</button>
-                                <button class="btn btn-secondary add-to-cart">Add to Cart</button>
-                                <button class="btn btn-light share">Share</button>
+                                <a class="btn btn-primary btn-block buy-now" href="./checkout.html">Buy Now</a>
+                                <button class="btn btn-secondary btn-block add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-block share">Share</button>
                             </div>
                         </div>
                     </div>
@@ -207,9 +210,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Product Name</h5>
                                 <p class="card-text">$10</p>
-                                <button class="btn btn-primary buy-now">Buy Now</button>
-                                <button class="btn btn-secondary add-to-cart">Add to Cart</button>
-                                <button class="btn btn-light share">Share</button>
+                                <a class="btn btn-primary btn-block buy-now" href="./checkout.html">Buy Now</a>
+                                <button class="btn btn-secondary btn-block add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-block share">Share</button>
                             </div>
                         </div>
                     </div>
@@ -219,15 +222,15 @@
                             <div class="card-body">
                                 <h5 class="card-title">Product Name</h5>
                                 <p class="card-text">$10</p>
-                                <button class="btn btn-primary buy-now">Buy Now</button>
-                                <button class="btn btn-secondary add-to-cart">Add to Cart</button>
-                                <button class="btn btn-light share">Share</button>
+                                <a class="btn btn-primary btn-block buy-now" href="./checkout.html">Buy Now</a>
+                                <button class="btn btn-secondary btn-block add-to-cart">Add to Cart</button>
+                                <button class="btn btn-outline-primary btn-block share">Share</button>
                             </div>
                         </div>
                     </div>
                     <!-- Repeat as needed -->
                 </div>
-                <button id="see-more" class="btn btn-outline-primary mt-3">See More</button>
+                <button id="see-more" class="btn btn-outline-primary mt-3">See More</a>
             </section>
         </div>
     </div>
