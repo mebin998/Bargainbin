@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - BargainBin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            height: 100%; /* Ensure the body takes full height */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-wrapper {
+            flex: 1; /* Takes up available space */
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .quantity {
+            width: 60px;
+        }
+
+        .btn-modern {
+            background: linear-gradient(135deg, #6d5dfc, #5ed3fc);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 25px;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+
+        .btn-modern:hover {
+            background: linear-gradient(135deg, #5ed3fc, #6d5dfc);
+            color: white;
+        }
+
+        .subtotal-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .quantity {
+                width: 100%;
+            }
+
+            .subtotal-container {
+                margin-bottom: 20px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+   <!-- Header Section with Sub-Menus -->
+<header class="bg-dark text-white p-3 d-flex flex-wrap justify-content-between align-items-center">
+    <div class="container-fluid">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+        <a href="./Bargainbin.html"><img src="./loooogo.png" alt="BargainBin Logo" class="logo-img mr-2"></a>
+        <a href="./Bargainbin.html" style="text-decoration: none; color: aliceblue; font-family: 'Arial', sans-serif;"><div class="logo" >BargainBin</div></a>
+    </div>
+    <div class="input-group mx-2 my-2" style="max-width: 400px;">
+        <input type="text" id="searchBar" class="form-control" placeholder="Search products...">
+        <div class="input-group-append">
+            <button onclick="searchProducts()" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+
+    <nav class="d-flex flex-wrap justify-content-center">
+        <!-- Home Menu -->
+        <div class="dropdown mx-2">
+            <a href="#" class="text-white dropdown-toggle" data-toggle="dropdown">Home</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Featured Deals</a>
+                <a class="dropdown-item" href="#">Best Sellers</a>
+                <a class="dropdown-item" href="#">New Arrivals</a>
+                <a class="dropdown-item" href="#">Trending Now</a>
+            </div>
+        </div>
+
+        <!-- Categories Menu -->
+        <div class="dropdown mx-2">
+            <a href="#" class="text-white dropdown-toggle" data-toggle="dropdown">Categories</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Electronics</a>
+                <a class="dropdown-item" href="#">Home & Kitchen</a>
+                <a class="dropdown-item" href="#">Fashion</a>
+                <a class="dropdown-item" href="#">Health & Beauty</a>
+                <a class="dropdown-item" href="#">Sports & Outdoors</a>
+                <a class="dropdown-item" href="#">Toys & Games</a>
+            </div>
+        </div>
+
+        <!-- Deals Menu -->
+        <div class="dropdown mx-2">
+            <a href="#" class="text-white dropdown-toggle" data-toggle="dropdown">Deals</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Daily Deals</a>
+                <a class="dropdown-item" href="#">Clearance</a>
+                <a class="dropdown-item" href="#">Limited-Time Offers</a>
+                <a class="dropdown-item" href="#">Bulk Discounts</a>
+            </div>
+        </div>
+
+        <!-- Contact Us Menu -->
+        <div class="dropdown mx-2">
+            <a href="#" class="text-white dropdown-toggle" data-toggle="dropdown">Contact Us</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Customer Support</a>
+                <a class="dropdown-item" href="#">FAQs</a>
+                <a class="dropdown-item" href="#">Return Policy</a>
+                <a class="dropdown-item" href="#">Shipping Information</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex align-items-center">
+        <a href="#" class="text-white mx-2"><i class="fas fa-user"></i> User Name</a>
+    </div>
+</div>
+</div>
+</header>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Cart Items -->
+            <div class="col-lg-8 mb-4">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h5>Your Cart Items</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartTable">
+                                <!-- Sample Product Row -->
+                                <tr>
+                                    <td>
+                                        <img src="https://via.placeholder.com/50" alt="Product Image" class="img-fluid rounded mr-2">
+                                        Sample Product 1
+                                    </td>
+                                    <td class="price">$20</td>
+                                    <td>
+                                        <input type="number" class="form-control quantity" value="1" min="1">
+                                    </td>
+                                    <td class="item-total">$20</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-danger remove-btn">Remove</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="https://via.placeholder.com/50" alt="Product Image" class="img-fluid rounded mr-2">
+                                        Sample Product 2
+                                    </td>
+                                    <td class="price">$15</td>
+                                    <td>
+                                        <input type="number" class="form-control quantity" value="2" min="1">
+                                    </td>
+                                    <td class="item-total">$30</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-danger remove-btn">Remove</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-lg-4">
+                <div class="subtotal-container">
+                    <h5>Order Summary</h5>
+                    <p>Subtotal: <span id="subtotal">$50</span></p>
+                    <p>Shipping: <span id="shipping">$5</span></p>
+                    <hr>
+                    <h5>Grand Total: <span id="grandTotal">$55</span></h5>
+                    <a href="buy-now.html" class="btn btn-modern btn-block mt-4">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <div>BargainBin &copy; 2024</div>
+        <div>
+            <a href="#" class="text-white">About</a> |
+            <a href="#" class="text-white">Privacy</a> |
+            <a href="#" class="text-white">Terms</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to update totals
+            function updateTotals() {
+                let subtotal = 0;
+
+                // Iterate through each row to calculate the subtotal
+                document.querySelectorAll("#cartTable tr").forEach(row => {
+                    const price = parseFloat(row.querySelector(".price").textContent.replace("$", ""));
+                    const quantity = parseInt(row.querySelector(".quantity").value);
+                    const itemTotal = price * quantity;
+
+                    // Update the item total
+                    row.querySelector(".item-total").textContent = `$${itemTotal.toFixed(2)}`;
+
+                    // Add to subtotal
+                    subtotal += itemTotal;
+                });
+
+                // Update subtotal and grand total
+                document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
+                const shipping = parseFloat(document.getElementById("shipping").textContent.replace("$", ""));
+                const grandTotal = subtotal + shipping;
+                document.getElementById("grandTotal").textContent = `$${grandTotal.toFixed(2)}`;
+            }
+
+            // Attach event listener to quantity inputs
+            document.querySelectorAll(".quantity").forEach(input => {
+                input.addEventListener("input", updateTotals);
+            });
+
+            // Attach event listener to remove buttons
+            document.querySelectorAll(".remove-btn").forEach(button => {
+                button.addEventListener("click", function () {
+                    // Remove the row
+                    const row = this.closest("tr");
+                    row.remove();
+
+                    // Update totals
+                    updateTotals();
+                });
+            });
+
+            // Initial update of totals
+            updateTotals();
+        });
+    </script>
+</body>
+</html>
